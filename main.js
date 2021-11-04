@@ -34,7 +34,7 @@ function loadEventListeners() {
 }
 
 // show tasks from LS
-function getTasks{
+function getTasks() {
   let tasks;
     if(localStorage.getItem('tasks') === null) {
         tasks = [];
@@ -50,7 +50,7 @@ function getTasks{
     //add class
     li.className= 'collection-item';
     //create textnode and append to li
-    li.appendChild(document.createTextNode(taskInput.value));
+    li.appendChild(document.createTextNode(task));
 
     // link element
     const link = document.createElement('a');
