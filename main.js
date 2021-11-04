@@ -59,6 +59,9 @@ function addTask(e) {
 
     //append li to ul
     taskList.appendChild(li);
+     // ls
+
+     storeTaskInLocalStorage(taskInput.value);
 
     //clear input 
     taskInput.value = '';
@@ -68,6 +71,11 @@ function addTask(e) {
     e.preventDefault();
 }
 
+//store Task
+function storeTaskInLocalStorage(task) {
+    let tasks;
+    
+}
 /// remove task
 
 function removeTask(e) {
