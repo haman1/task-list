@@ -1,6 +1,6 @@
 # task-list
 
-A Javascript DOM application that can
+## A Javascript DOM application that can
     - Add tasks
     - List tasks
     - Delete tasks
