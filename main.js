@@ -13,6 +13,9 @@ loadEventListeners();
 
 //function to load all
 function loadEventListeners() {
+
+    //Dom load event
+    document.addEventListener('DOMContentLoaded', getTasks);
     //add task event
     form.addEventListener('submit', addTask);
 
@@ -30,7 +33,45 @@ function loadEventListeners() {
     
 }
 
+// show tasks from LS
+function getTasks{
+  let tasks;
+    if(localStorage.getItem('tasks') === null) {
+        tasks = [];
 
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+
+    }
+    tasks.forEach(function(task){
+        //create li elements
+
+    const li = document.createElement('li');
+    //add class
+    li.className= 'collection-item';
+    //create textnode and append to li
+    li.appendChild(document.createTextNode(taskInput.value));
+
+    // link element
+    const link = document.createElement('a');
+
+    //add class
+    link.className = 'delete-item secondary-content';
+
+    //add icon html
+    link.innerHTML = '<i class="fa fa-remove"></li>';
+
+    //append li to ul
+    li.appendChild(link);
+
+    //append li to ul
+    taskList.appendChild(li);
+
+    });
+    
+
+
+}
 //Add Task 
 function addTask(e) {
     if(taskInput.value === '') {
